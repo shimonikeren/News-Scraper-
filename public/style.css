@@ -1,9 +1,19 @@
-
 .jumbotron {
-    background:lightgreen;
+    background: lightgreen ;
+    color: blue;
+    text-align: center;
+}
+
+.nav {
+    justify-content: center;
 }
 
 .food-img {
     max-height: 100px;
     max-width: 100px;
+}
+
+.card {
+    float: left;
+    margin: 30px;
 }
