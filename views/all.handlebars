@@ -8,3 +8,17 @@
         </nav>
   </div>
 </div>
+
+<div class="container allCards">
+    {{#each article}}
+      <a href="{{this.link}}" target="blank">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{this.imgURL}}" alt="recipe image">
+          <div class="card-body">
+              <h5 class="card-title">{{this.title}}</h5>
+        </a>
+        <button type="button" class="btn btn-info saveBtn">Save Recipe</button>
+        </div> <!--end card body-->
+    </div> <!--end card-->
+    {{/each}}
+</div> <!--end container-->

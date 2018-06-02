@@ -1,3 +1,7 @@
+.homeContainer {
+    background-color:blue;
+}
+
 .jumbotron {
     background: lightgreen ;
     color: blue;
@@ -16,4 +20,8 @@
 .card {
     float: left;
     margin: 30px;
+    max-height: 430px;
+    min-height: 430px;
+    max-width: 280px;
+    min-width: 280px;
 }

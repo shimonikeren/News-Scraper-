@@ -58,27 +58,20 @@ request("https://www.allrecipes.com/recipes/84/healthy-recipes/", function(error
   // Create a new Article using the `result` object built from scraping
   db.Article.create(results)
     .then(function(dbArticle) {
-      // return res.status(200);
-      console.log("DB ARTICLE---------------------------");
-      console.log(dbArticle);
+      console.log("articles scraped");
     })
     .catch(function(err) {
       return res.json(err);
     });
   });
   res.redirect("/articles");
-  // res.json(dbArticle);
-  // res.redirect("all");
-  // res.send("done");  //this is working 
 });
-
 
 //get all articles from db 
 app.get("/articles", function(req, res){
+  console.log("redirected");
   db.Article.find({}).then(function (dbArticle) {
-      res.json(dbArticle);
-      // res.send(dbArticle);
-      res.render('all');
+      res.render("all", { article: dbArticle });
   })
       .catch(function (err) {
           res.json(err);
@@ -87,6 +80,8 @@ app.get("/articles", function(req, res){
 
 //save article route //update... save=true 
 //delete article route
+
+
 
 // Start the server
 app.listen(PORT, function() {
