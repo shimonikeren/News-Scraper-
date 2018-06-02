@@ -1,0 +1,9 @@
+
+.jumbotron {
+    background:lightgreen;
+}
+
+.food-img {
+    max-height: 100px;
+    max-width: 100px;
+}
