@@ -1,11 +1,30 @@
-.homeContainer {
-    background-color:blue;
+#home { 
+    background-image: url("avo.jpg");
+    height: 100%; 
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .jumbotron {
-    background: lightgreen ;
-    color: blue;
+    /* background: lightgreen ; */
+    background-image: url("avo.jpg");
+    height: 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
     text-align: center;
+}
+
+.jumboHome {
+    background: transparent;
+}
+
+.nav-link {
+    color: grey;
+    background-color: white;
+    opacity: .5;
+    margin: 8px;
 }
 
 .nav {
@@ -24,7 +43,7 @@
     min-height: 430px;
     max-width: 280px;
     min-width: 280px;
-    border: 3px solid #00a5bb;
+    border: 5px solid #9ec3cb;
 }
 
 .alreadySaved {
