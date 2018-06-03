@@ -9,10 +9,10 @@
   </div>
 </div>
 
-<div class="container allCards">
+<div class="container">
     {{#each article}}
       <a href="{{this.link}}" target="blank">
-      <div class="card rounded-0" style="width: 18rem;">
+      <div class="card allCards rounded-0" style="width: 18rem;">
           <img class="card-img-top" src="{{this.imgURL}}" alt="recipe image">
           <div class="card-body">
               <h5 class="card-title">{{this.title}}</h5>
@@ -24,8 +24,8 @@
          <button type="button" class="btn btn-secondary rounded-0">Already Saved</button>
          {{/if}}
 
-        {{!-- not yet ready
-        <button type="button" class="btn btn-info comment rounded-0" data-id="{{this._id}}">Comments</button> --}}
+        {{!-- not yet ready --}}
+        <button type="button" class="btn btn-info commentBtn rounded-0" data-id="{{this._id}}">Comments</button>
 
 
         </div> <!--end card body-->

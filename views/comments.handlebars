@@ -1,0 +1,67 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Comments</h1>
+      <nav class="nav">
+            <a class="nav-link scrapeBtn" href="/scrape">Scrape Healthy Recipes</a>
+            <a class="nav-link savedBtn" href="/saved">Saved Recipes</a>
+            <a class="nav-link homeBtn" href="/">Home</a>
+        </nav>
+  </div>
+</div>
+
+
+<div class="container commentCont">
+  <div class="row">
+      <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <div class="card commentCards" style="width: 18rem;">
+              <img class="card-img-top" src="{{comments.imgURL}}" alt="recipe image">
+                <div class="card-body">
+                  <p class="card-text commentTitle">{{comments.title}}</p>
+                </div>
+            </div>
+        </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4 commentCards">
+      {{#unless comments.body}}
+            <br> <p>Be the first to comment!</p> <br>
+      {{/unless}}
+        <form action="/comment/add/{{comments.id}}" method="POST">
+          <div class="form-group">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required="required" placeholder="Input Comment" maxlength="200" type="text" name="comment"></textarea><br>
+              <button type="button submit" class="btn btn-info submitComment rounded-0" data-id="{{comments._id}}">Submit Comment</button>
+          </div>
+        </form>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>
+
+<br><br>
+
+{{!-- {{#if comments.body}} --}}
+
+<div class="container commsCont">
+  <div class="row">
+    <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <h3>All Comments:</h3>
+        {{!-- {{#each}}  --}}
+          <div class="card">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>sampleeeee</p>
+                {{!-- <p>{{comments.body}}</p> --}}
+                <button type="button deleteBtn" class="btn btn-info delComment rounded-0" data-id="{{comments._id}}">Delete Comment</button>
+              </blockquote>
+            </div>
+          </div>
+      </div>
+    <div class="col-sm-1"></div>  
+  </div>
+</div>
+{{!-- {{/each}}
+{{/if}} --}}
+
+
+<br><br><br><br><br><br>

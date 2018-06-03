@@ -14,11 +14,11 @@
 
 <!-- IF SAVED  -->
 
-<div class="container allCards">
+<div class="container">
     {{#each article}}
     {{#if this.saved}}
       <a href="{{this.link}}" target="blank">
-      <div class="card rounded-0" style="width: 18rem;">
+      <div class="card allCards rounded-0" style="width: 18rem;">
           <img class="card-img-top" src="{{this.imgURL}}" alt="recipe image">
           <div class="card-body">
               <h5 class="card-title">{{this.title}}</h5>

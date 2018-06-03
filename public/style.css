@@ -36,7 +36,12 @@
     max-width: 100px;
 }
 
-.card {
+.smallPic {
+    max-height: 60px;
+    max-width: 60px;
+}
+
+.allCards {
     float: left;
     margin: 36px;
     max-height: 440px;
@@ -48,4 +53,29 @@
 
 .alreadySaved {
     border: 1px solid #00a5bb;
+}
+
+/* .commentBox{
+    border: 5px solid #9ec3cb;
+} */
+
+.commentCont {
+    align-content: center;
+}
+
+.commentTitle {
+    font-size: 20px;
+}
+
+.commentCards {
+    color: #00a5bb;
+    max-height: 340px;
+    min-height: 340px;
+    max-width: 390px;
+    min-width: 390px;
+    border: 5px solid #9ec3cb;
+}
+
+.commsCont {
+    color: #9ec3cb;
 }

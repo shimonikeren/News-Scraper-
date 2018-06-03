@@ -110,7 +110,32 @@ app.get("/saved", function(req, res){
       });
 });
 
-//write comments
+//get route to comment form (which will have all comments and option to add comment)
+app.get("/comment/:id", function(req, res){
+  db.Article.findOne({_id: req.params.id})
+    .populate("comment")
+    .then(function (comments) {
+      res.render("comments" , {comments: comments})
+    }).catch(function (err) {
+          res.json(err);
+      });
+});
+
+//post route to submit comment 
+app.post("/comment/add/:id", function(req, res){
+  db.Comment.create(req.body)
+    .then(function(dbComment){
+      db.Article.findByIdAndUpdate({_id: req.params.id},{$push: {comments: dbComment._id}},{new:true})
+    }).then(function(dbComment){
+      db.Article.findOne({_id: req.params.id})
+      .populate("comment")
+      .then(function(comments){
+        res.render('comments', {comments: comments});
+      })
+    }).catch(function (err) {
+      res.json(err);
+  });
+});
 
 //delete comments
 
