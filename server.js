@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
-// A GET route for scraping 
+// A GET route for scraping recipes
 app.get("/scrape", function(req, res) {
 request("https://www.allrecipes.com/recipes/84/healthy-recipes/", function(error,     response, html) {
     if (error){
@@ -55,7 +55,7 @@ request("https://www.allrecipes.com/recipes/84/healthy-recipes/", function(error
       }
   });
 
-  // Create a new Article using the `result` object built from scraping
+  // Create a new Article model using the `result` object built from scraping
   db.Article.create(results)
     .then(function(dbArticle) {
       console.log("articles scraped");
@@ -67,7 +67,7 @@ request("https://www.allrecipes.com/recipes/84/healthy-recipes/", function(error
   res.redirect("/articles");
 });
 
-//get all articles from db 
+//get all recipes from db 
 app.get("/articles", function(req, res){
   console.log("redirected to /articles");
   db.Article.find({}).then(function (dbArticle) {
@@ -78,10 +78,7 @@ app.get("/articles", function(req, res){
       });
 });
 
-//save article route //update... save=true 
-//delete article route
-
- //save recipe
+ //save recipe to favorites 
  app.put("/saved/:id", function (req, res){
   db.Article.update({ _id: req.params.id }, { $set: {saved: true }})
       .then(function(dbArticle){
@@ -92,7 +89,7 @@ app.get("/articles", function(req, res){
       })
 })
 
-//unsave recipe
+//unsave recipe / remove from favorites 
 app.put("/unsaved/:id", function (req, res){
   db.Article.update({ _id: req.params.id }, { $set: {saved: false }})
       .then(function(dbArticle){
@@ -103,7 +100,7 @@ app.put("/unsaved/:id", function (req, res){
       })
 })
 
-//route to see all saved recipes 
+//GET all saved recipes 
 app.get("/saved", function(req, res){
   db.Article.find({}).then(function (dbArticle) {
     res.render("saved", { article: dbArticle });
@@ -112,6 +109,11 @@ app.get("/saved", function(req, res){
           res.json(err);
       });
 });
+
+//write comments
+
+
+//delete comments
 
 
 // Start the server

@@ -22,7 +22,11 @@
           <div class="card-body">
               <h5 class="card-title">{{this.title}}</h5>
         </a>
-        <button type="button" class="btn btn-info unsaveBtn" data-id="{{this._id}}">Remove Recipe</button>
+        <button type="button" class="btn btn-secondary unsaveBtn rounded-0" data-id="{{this._id}}">Unsave</button>
+        
+        <button type="button" class="btn btn-info comment rounded-0" data-id="{{this._id}}">Comments</button>
+
+        
         </div> <!--end card body-->
     </div> <!--end card-->
     {{/if}}

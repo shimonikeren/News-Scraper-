@@ -18,11 +18,15 @@
               <h5 class="card-title">{{this.title}}</h5>
         </a>
          {{#unless this.saved}}
-            <button type="button" class="btn btn-info saveBtn" data-id="{{this._id}}">Save Recipe</button>
+            <button type="button" class="btn btn-info saveBtn rounded-0" data-id="{{this._id}}">Save Recipe</button>
          {{/unless}}
          {{#if this.saved}}
-         <button type="button" class="btn btn-light">Already Saved</button>
+         <button type="button" class="btn btn-secondary rounded-0">Already Saved</button>
          {{/if}}
+
+        <button type="button" class="btn btn-info comment rounded-0" data-id="{{this._id}}">Comments</button>
+
+
         </div> <!--end card body-->
     </div> <!--end card-->
     {{/each}}
