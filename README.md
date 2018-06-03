@@ -1,5 +1,5 @@
 ### Live Link
- - comingsoon/ [ for now, please pull the repository and check it out on your local machine :) ]
+ - comingsoon...for now, please pull the repository and check it out on your local machine :) 
 
 ### Overview
 
