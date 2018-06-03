@@ -19,9 +19,14 @@
 
 .card {
     float: left;
-    margin: 30px;
+    margin: 36px;
     max-height: 430px;
     min-height: 430px;
     max-width: 280px;
     min-width: 280px;
+    border: 3px solid #00a5bb;
+}
+
+.alreadySaved {
+    border: 1px solid #00a5bb;
 }

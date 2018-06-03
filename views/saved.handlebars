@@ -1,10 +1,10 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Find Healthy Recipes</h1>
+    <h1 class="display-4">Saved Recipes</h1>
       <nav class="nav">
-            <a class="nav-link scrapeBtn" href="/scrape">Scrape Healthy Recipes</a>
-            <a class="nav-link savedBtn" href="/saved">Saved Recipes</a>
             <a class="nav-link homeBtn" href="/">Home</a>
+            <a class="nav-link scrapeBtn" href="/scrape">Scrape Healthy Recipes</a>
+
         </nav>
   </div>
 </div>
@@ -12,3 +12,19 @@
 
 
 <!-- IF SAVED  -->
+
+<div class="container allCards">
+    {{#each article}}
+    {{#if this.saved}}
+      <a href="{{this.link}}" target="blank">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{this.imgURL}}" alt="recipe image">
+          <div class="card-body">
+              <h5 class="card-title">{{this.title}}</h5>
+        </a>
+        <button type="button" class="btn btn-info unsaveBtn" data-id="{{this._id}}">Remove Recipe</button>
+        </div> <!--end card body-->
+    </div> <!--end card-->
+    {{/if}}
+    {{/each}}
+</div> <!--end container-->

@@ -69,7 +69,7 @@ request("https://www.allrecipes.com/recipes/84/healthy-recipes/", function(error
 
 //get all articles from db 
 app.get("/articles", function(req, res){
-  console.log("redirected");
+  console.log("redirected to /articles");
   db.Article.find({}).then(function (dbArticle) {
       res.render("all", { article: dbArticle });
   })
@@ -81,6 +81,37 @@ app.get("/articles", function(req, res){
 //save article route //update... save=true 
 //delete article route
 
+ //save recipe
+ app.put("/saved/:id", function (req, res){
+  db.Article.update({ _id: req.params.id }, { $set: {saved: true }})
+      .then(function(dbArticle){
+        res.render("saved", { article: dbArticle }); 
+      })
+      .catch(function(err){
+          res.json(err)
+      })
+})
+
+//unsave recipe
+app.put("/unsaved/:id", function (req, res){
+  db.Article.update({ _id: req.params.id }, { $set: {saved: false }})
+      .then(function(dbArticle){
+        res.render("saved", { article: dbArticle }); 
+      })
+      .catch(function(err){
+          res.json(err)
+      })
+})
+
+//route to see all saved recipes 
+app.get("/saved", function(req, res){
+  db.Article.find({}).then(function (dbArticle) {
+    res.render("saved", { article: dbArticle });
+  })
+      .catch(function (err) {
+          res.json(err);
+      });
+});
 
 
 // Start the server

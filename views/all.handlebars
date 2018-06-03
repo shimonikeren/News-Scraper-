@@ -17,7 +17,12 @@
           <div class="card-body">
               <h5 class="card-title">{{this.title}}</h5>
         </a>
-        <button type="button" class="btn btn-info saveBtn">Save Recipe</button>
+         {{#unless this.saved}}
+            <button type="button" class="btn btn-info saveBtn" data-id="{{this._id}}">Save Recipe</button>
+         {{/unless}}
+         {{#if this.saved}}
+         <button type="button" class="btn btn-light">Already Saved</button>
+         {{/if}}
         </div> <!--end card body-->
     </div> <!--end card-->
     {{/each}}
