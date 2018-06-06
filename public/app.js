@@ -68,12 +68,13 @@ $(".delComment").on("click", function(event) {
     var itemId = $(this).data("id");
     alert("btn clcked");
     alert(itemId);
-    $.ajax("/comment/delete/"+itemId, {
+    $.ajax("/comment/"+itemId, {
         type:"DELETE"
     }).then(
         function() {
-            window.location.href = "/comments";
+            // window.location.href = "/comments";
             // location.reload();
+            console.log("wait");
         }
     );
 });
