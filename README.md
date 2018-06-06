@@ -4,7 +4,7 @@
  - comingsoon...for now, please pull the repository and check it out on your local machine :) 
 
 
-![screenshot](/public/scrapper.png) 
+![screenshot](/public/scraper.png) 
 
 
 
