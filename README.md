@@ -1,10 +1,12 @@
 # Healthy Recipe Scraper 
 
 ### Live Link
- - comingsoon...for now, please pull the repository and check it out on your local machine :) 
+**Link to App Demo** 
+[Click Here](https://newsscraperr.herokuapp.com/)
 
 
 ![screenshot](/public/screenshot.png) 
+
 
 
 
