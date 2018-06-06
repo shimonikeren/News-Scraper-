@@ -40,6 +40,25 @@ $(".commentBtn").on("click", function() {
     }).then(
         function() {
             $(location).attr('href', "/comment/"+itemId);
+            // location.reload();
+        }
+    );
+});
+
+$(".submitComment").on("click", function(event) {
+    event.preventDefault();
+    var itemId = $(this).data("id");
+    var posted = $("#exampleFormControlTextarea1").val();
+    console.log(posted);
+    console.log(itemId);
+    //this is the POST ROUTE for comments
+    $.ajax("/comment/"+itemId, {
+        type: "POST",
+        data: {body: posted}
+    }).then(
+        function(newPage) {
+            location.reload();
+            // document.write(newPage);
         }
     );
 });
@@ -47,11 +66,14 @@ $(".commentBtn").on("click", function() {
 $(".delComment").on("click", function(event) {
     event.preventDefault();
     var itemId = $(this).data("id");
+    alert("btn clcked");
+    alert(itemId);
     $.ajax("/comment/delete/"+itemId, {
-        type: "DELETE"
+        type:"DELETE"
     }).then(
         function() {
             window.location.href = "/comments";
+            // location.reload();
         }
     );
 });

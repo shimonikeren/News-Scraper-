@@ -122,15 +122,15 @@ app.get("/comment/:id", function(req, res){
 });
 
 //post route to submit comment 
-app.post("/comment/add/:id", function(req, res){
+app.post("/comment/:id", function(req, res){
   db.Comment.create(req.body)
     .then(function(dbComment){
-      db.Article.findByIdAndUpdate({_id: req.params.id},{$push: {comments: dbComment._id}},{new:true})
-    }).then(function(dbComment){
+      return db.Article.findByIdAndUpdate({_id: req.params.id},{$push: {comment: dbComment._id}},{new:true})
+    }).then(function(dbArticle){
       db.Article.findOne({_id: req.params.id})
       .populate("comment")
-      .then(function(comments){
-        res.render('comments', {comments: comments});
+      .then(function(dbArtwComments){
+        res.render('comments', {list: dbArtwComments.comment});
       })
     }).catch(function (err) {
       res.json(err);
