@@ -66,19 +66,14 @@ $(".submitComment").on("click", function(event) {
 $(".delComment").on("click", function(event) {
     event.preventDefault();
     var itemId = $(this).data("id");
-    alert("btn clcked");
-    alert(itemId);
-    $.ajax("/comment/"+itemId, {
-        type:"DELETE"
+    $.ajax("/comment/delete/"+itemId, {
+        type:"POST",
+        data: {body: itemId}
     }).then(
         function() {
-            // window.location.href = "/comments";
-            // location.reload();
-            console.log("wait");
+            location.reload();
         }
     );
 });
-
-
 
 }); //end doc ready 

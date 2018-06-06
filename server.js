@@ -138,14 +138,13 @@ app.post("/comment/:id", function(req, res){
 });
 
 //delete comments
-app.delete("/comment/:id",function(req, res){
-  db.Comment.findOne({_id: req.params.id})
+
+app.post("/comment/delete/:id",function(req, res){
+  db.Comment.remove({_id: req.params.id})
   .then(function(dbComment){
     console.log("dbComment-----------------");
     console.log(dbComment); //BREAKS HERE 
       return db.Comment.findOneAndUpdate({_id: req.params.id}, {$pull: {comment: dbComment._id}});
-      console.log("deleted comments-------");
-      console.log(comment);
   })
   .then(function(data){
       res.json(data)
@@ -153,8 +152,16 @@ app.delete("/comment/:id",function(req, res){
   .catch(function(err){
       res.json(err)
   })
-
 })
+
+
+
+
+// app.post('/comment/delete/:id', function(req, res) {
+//   var userId = req.body.userId;
+//   db.Comment.remove({_id: userId}, function(err, res)
+
+
 
 
 // Start the server

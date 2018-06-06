@@ -10,10 +10,7 @@
   </div>
 </div>
 
-
-
-<!-- IF SAVED  -->
-
+<!--if recipe is 'saved', execute the following -->
 <div class="container">
     {{#each article}}
     {{#if this.saved}}
@@ -24,10 +21,7 @@
               <h5 class="card-title">{{this.title}}</h5>
         </a>
         <button type="button" class="btn btn-secondary unsaveBtn rounded-0" data-id="{{this._id}}">Unsave</button>
-        
-        {{!--  not yet ready 
-        <button type="button" class="btn btn-info comment rounded-0" data-id="{{this._id}}">Comments</button> --}}
-
+        <button type="button" class="btn btn-info commentBtn rounded-0" data-id="{{this._id}}">Comments</button>
         
         </div> <!--end card body-->
     </div> <!--end card-->
