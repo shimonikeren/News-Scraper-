@@ -39,9 +39,9 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <h3>All comments:</h3>
-         {{#unless comments.body}}
+         {{#unless comments.comment}}
             <br> <p>No comments yet...Be the first to comment!</p> <br>
-        {{/unless}}
+          {{/unless}}
             {{#each comments.comment}}
               <div class="card eachComment">
                 <div class="card-body">
