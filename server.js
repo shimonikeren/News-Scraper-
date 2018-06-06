@@ -154,15 +154,14 @@ app.post("/comment/delete/:id",function(req, res){
   })
 })
 
-
-
-
-// app.post('/comment/delete/:id', function(req, res) {
-//   var userId = req.body.userId;
-//   db.Comment.remove({_id: userId}, function(err, res)
-
-
-
+//------End database configuration-----//
+var database = mongoose.connection;
+database.on('error', function(err){
+  console.log('Mongoose Error:', err);
+})
+database.once('open', function(){
+  console.log('Mongoose connection successful');
+})
 
 // Start the server
 app.listen(PORT, function() {
