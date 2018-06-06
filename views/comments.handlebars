@@ -10,7 +10,7 @@
 </div>
 
 
-<div class="container commentCont">
+<div class="container">
   <div class="row">
         <div class="col-sm-6">
             <div class="card commentCards" style="width: 18rem;">
@@ -32,12 +32,18 @@
   </div>
 </div>
 
+
+
+
+
 <br><br>
 
   <div class="container commsCont">
     <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
+      <div class="col-sm-12">
+        
+      {{!-- </div> --}}
+      {{!-- <div class="col-sm-10"> --}}
         <h3>All comments:</h3>
          {{#unless comments.comment}}
             <br> <p>No comments yet...Be the first to comment!</p> <br>
@@ -51,7 +57,7 @@
             </div>
           {{/each}}
       </div>
-      <div class="col-sm-1"></div>
+      {{!-- <div class="col-sm-1"></div> --}}
     </div>
   </div>
 

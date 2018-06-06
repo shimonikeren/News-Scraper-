@@ -3,9 +3,14 @@
 ### Live Link
  - comingsoon...for now, please pull the repository and check it out on your local machine :) 
 
+
+![screenshot](/public/scrapper.png) 
+
+
+
 ### Overview
 
-This is a web app that lets users 'scrape' the web for healthy recipes. Cards with recipe name and image will be displayed, and when the card itself is clicked, user is redirected to the full recipe page. Users can save and remove recipes from favorites. 
+This is a web app that lets users 'scrape' the web for healthy recipes. Cards with recipe name and image will be displayed, and when the card itself is clicked, user is redirected to the full recipe page. Users can save and remove recipes from favorites. Users can add and delete comments on each recipe.
 
 ### Technologies Used
 

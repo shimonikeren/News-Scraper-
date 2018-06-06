@@ -6,7 +6,6 @@
 }
 
 .jumbotron {
-    /* background: lightgreen ; */
     background-image: url("avo.jpg");
     height: 100%; 
     background-repeat: no-repeat;
@@ -64,14 +63,6 @@
     border: 1px solid #00a5bb;
 }
 
-/* .commentBox{
-    border: 5px solid #9ec3cb;
-} */
-
-.commentCont {
-    align-content: center;
-}
-
 .commentTitle {
     font-size: 20px;
 }
@@ -88,6 +79,7 @@
 
 .commsCont {
     color: #9ec3cb;
+    padding-left: -15px;
 }
 
 .eachComment {
